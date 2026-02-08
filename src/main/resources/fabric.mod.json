@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "mc-auth",
+  "version": "${version}",
+  "name": "mc-supa-auth",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/mc-auth/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.bpl.mcAuth.client.McAuthDataGenerator"
+    ],
+    "main": [
+      "org.bpl.mcAuth.McAuth"
+    ]
+  },
+  "mixins": [
+    "mc-auth.mixins.json",
+    {
+      "config": "mc-auth.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
